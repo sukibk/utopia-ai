@@ -1,0 +1,81 @@
+.main-form--container{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(128, 128, 128);
+    padding: 2rem;
+    border-radius: inherit;
+}
+
+.main-form--container h2{
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.main-form--main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main-form--input_container{
+    display: inherit;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    gap: 1.3rem;
+}
+
+.main-form--input{
+    all: unset;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 2rem;
+}
+
+.main-form--input_text:focus{
+    background-color: rgba(211, 211, 211, 0.41);
+    transition: all 0.3s;
+}
+
+.main-form--input_date-time{
+    all: unset;
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 2rem;
+}
+
+::-webkit-calendar-picker-indicator {
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+}
+
+::-webkit-calendar-picker-indicator:hover{
+    cursor: pointer;
+}
+
+.main-form--input_actions{
+
+}
+
+.main-form--input_actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.main-form--input_actions__button{
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    background-color: rgba(133, 42, 155, 0.72);
+}
+
+.main-form--input_actions__button:hover{
+    background-color: #8c5ea4;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+
