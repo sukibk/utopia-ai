@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {RootPage} from "./pages/Root.jsx";
-import {HomePage} from "./pages/Home";
+import {HomePage, action as signUpAction,
+    loader as rootLoader} from "./pages/Home";
 
 const router = createBrowserRouter([
   {path: '/',
@@ -12,7 +13,9 @@ const router = createBrowserRouter([
    children: [
      {
        index: true,
-       element: <HomePage />
+       element: <HomePage />,
+       action: signUpAction,
+       loader: rootLoader,
      }
    ]
   }

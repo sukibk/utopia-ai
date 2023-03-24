@@ -1,7 +1,7 @@
 .main-form--container{
     text-align: center;
     width: 100%;
-    background-color: rgb(128, 128, 128);
+    background-color: rgba(181, 164, 238, 0.4);
     padding: 2rem;
     border-radius: inherit;
 }
@@ -33,9 +33,17 @@
     border-radius: 2rem;
 }
 
+.main-form--input_invalid{
+    background-color: rgba(204, 90, 90, 0.7);
+}
+
 .main-form--input_text:focus{
     background-color: rgba(211, 211, 211, 0.41);
     transition: all 0.3s;
+}
+
+.main-form--input::placeholder{
+    color: rgba(255, 236, 171, 0.51);
 }
 
 .main-form--input_date-time{
@@ -78,4 +86,8 @@
     transition: all 0.4s;
 }
 
+.main-form--input_actions__button:disabled{
+    background-color: #555555;
+    cursor: not-allowed;
+}
 

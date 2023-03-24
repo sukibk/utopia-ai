@@ -9,7 +9,7 @@
     position: relative;
     z-index: 999;
     padding: 1rem;
-    background-color: rgb(128, 128, 128);
+    background-color: rgba(181, 164, 238, 0.4);
     border-radius: 0rem 0rem 2rem 2rem;
     width: 80%;
 }
@@ -67,8 +67,87 @@
     transition: all 0.4s;
 }
 
+.navbar--menu-phone_item{
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.navbar--menu-phone{
+    display: none;
+}
+
+.navbar--menu-phone_button:hover{
+    cursor: pointer;
+}
+
+.navbar--menu-phone_button_trans:hover > .navbar--menu-phone_item-1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.navbar--menu-phone_button_trans:hover > .navbar--menu-phone_item-2 {opacity: 0;}
+
+.navbar--menu-phone_button_trans:hover > .navbar--menu-phone_item-3{
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+
+.navbar--menu-desktop{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navbar--menu-phone_button{
+    unset: all;
+    background: transparent;
+    border: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+    opacity: 1;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 @media only screen and (max-width: 950px){
+    .navbar--menu-desktop{
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+    }
+
+    .hide-on-mobile{
+        display: none;
+        transition: all 0.3s;
+    }
+
+    .navbar--menu{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+
+    .navbar--menu-phone{
+        display: block;
+    }
+
+
     .navbar--menu_item{
         font-size: 1rem;
         text-decoration: none;
