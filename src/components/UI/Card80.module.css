@@ -1,0 +1,10 @@
+.card{
+    width: 80%;
+    border-radius: 2rem;
+}
+
+@media only screen and (max-width: 950px){
+    .card{
+        width: 80%;
+    }
+}

@@ -1,4 +1,4 @@
-import {HomePageContainer} from "../components/HomePageContainer";
+import {HomePageContainer} from "../components/HomePage/HomePageContainer.jsx";
 import {auth} from "../firebase.js";
 import {redirect} from "react-router";
 import {onAuthStateChanged, signOut} from 'firebase/auth'

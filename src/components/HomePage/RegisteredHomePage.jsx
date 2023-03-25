@@ -1,9 +1,9 @@
-import styles from "./MainFormLoggedIn.module.css";
+import styles from "./RegisteredMainPage.module.css";
 import {signOut} from "firebase/auth";
-import {auth} from "../firebase.js";
-import {removeUser} from "../store/authSlice.js";
+import {auth} from "../../firebase.js";
+import {removeUser} from "../../store/authSlice.js";
 
-export const MainFormLoggedIn = (props) => {
+export const RegisteredHomePage = (props) => {
     const logOutHandler = () => {
         props.onLogOut();
     }

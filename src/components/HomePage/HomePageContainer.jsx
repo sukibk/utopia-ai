@@ -1,13 +1,13 @@
 import styles from './HomePageContainer.module.css';
-import {TitleBox} from "./TitleBox";
-import {Card} from "./UI/Card";
-import {MainForm} from "./MainForm";
+import {TitleBox} from "./TitleBox.jsx";
+import {Card40} from "../UI/Card40.jsx";
+import {RegisterForm} from "./RegisterForm.jsx";
 import {useSelector} from "react-redux";
-import {MainFormLoggedIn} from "./MainFormLoggedIn";
-import {auth} from "../firebase.js";
+import {RegisteredHomePage} from "./RegisteredHomePage.jsx";
+import {auth} from "../../firebase.js";
 import {signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut} from 'firebase/auth';
 import toast, {Toaster} from "react-hot-toast";
-import {removeUser} from "../store/authSlice.js";
+import {removeUser} from "../../store/authSlice.js";
 
 export const HomePageContainer = () =>{
     const user = useSelector(store => store.auth.currentUser)
@@ -30,12 +30,12 @@ export const HomePageContainer = () =>{
 
     return <section className={styles['main--section']}>
         <Toaster />
-        <Card>
+        <Card40>
             <TitleBox />
-        </Card>
-        <Card>
-            {!user ? <MainForm onRegister={registerUser}/> : <MainFormLoggedIn
+        </Card40>
+        <Card40>
+            {!user ? <RegisterForm onRegister={registerUser}/> : <RegisteredHomePage
                 onLogOut={loggingOutUser} email={user.email}/>}
-        </Card>
+        </Card40>
     </section>
 }

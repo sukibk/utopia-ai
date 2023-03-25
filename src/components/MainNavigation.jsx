@@ -6,10 +6,10 @@ export const MainNavigation = () => {
     const [desktopNavMenuDisplay, setDesktopMovNavMenuDisplay] = useState('');
 
     let className = `${styles['navbar--menu-desktop']}`;
-    let phoneNavClass = `${styles['navbar--menu-phone_button']}`
+    let phoneNavClass = `${styles['navbar--menu-phone_button']} ${styles['navbar--menu-phone_button_closed']}`
 
     if(desktopNavMenuDisplay === '') {
-        phoneNavClass = `${styles['navbar--menu-phone_button']}`
+        phoneNavClass = `${styles['navbar--menu-phone_button']} ${styles['navbar--menu-phone_button_closed']}`
         className = `${styles['navbar--menu-desktop']} ${styles['hide-on-mobile']}`
     }
     else {
@@ -30,13 +30,16 @@ export const MainNavigation = () => {
                 <ul className={styles['navbar--menu']}>
                     <div className={className}>
                     <li>
-                        <NavLink to='' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>HOME</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>HOME</NavLink>
                     </li>
                     <li>
-                        <NavLink to='products'className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>PRODUCTS</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='login'className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>LOGIN</NavLink>
                     </li>
                     <li>
-                        <NavLink to='profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>PROFILE</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='products'className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>PRODUCTS</NavLink>
+                    </li>
+                    <li>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>PROFILE</NavLink>
                     </li>
                         <li>
                             <div className={styles['navbar--actions']}>

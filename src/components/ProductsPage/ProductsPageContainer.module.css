@@ -1,0 +1,28 @@
+.products-container--wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.products-container--main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(181, 164, 238, 0.4);
+    margin-top: 4rem;
+    gap: 10%;
+}
+
+
+@media only screen and (max-width: 950px){
+    .products-container--main{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(181, 164, 238, 0.4);
+        margin-top: 4rem;
+        gap: 10%;
+    }
+}

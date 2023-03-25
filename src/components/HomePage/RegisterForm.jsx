@@ -1,10 +1,10 @@
-import styles from './MainForm.module.css';
-import {Form, useFetcher} from 'react-router-dom';
+import styles from './RegisterForm.module.css';
+import {Form, Link, useFetcher} from 'react-router-dom';
 import {useState} from "react";
-import useCheckInput from "../hooks/checkInput.js";
+import useCheckInput from "../../hooks/checkInput.js";
 import {useActionData, useLoaderData} from "react-router";
 
-export const MainForm = (props) =>{
+export const RegisterForm = (props) =>{
     const [type, setType] = useState('text');
 
     const {value: email,
@@ -26,8 +26,11 @@ export const MainForm = (props) =>{
 
     const formSubmitHandler = (e) => {
         e.preventDefault()
-        if(enableRegister)
+        if(enableRegister){
         props.onRegister(email, password);
+        passwordReset();
+        emailReset();
+        }
         else alert('Nice Try :>')
     }
 
@@ -42,7 +45,7 @@ export const MainForm = (props) =>{
             </div>
             <div className={styles['main-form--input_actions']}>
                 <button disabled={!enableRegister} className={styles['main-form--input_actions__button']}>REGISTER</button>
-                <button className={styles['main-form--input_actions__button']}>GO TO LOGIN</button>
+                <Link to='login' className={styles['main-form--input_actions__button']}>GO TO LOGIN</Link>
             </div>
         </Form>
     </div>
