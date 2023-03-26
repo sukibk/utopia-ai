@@ -1,9 +1,14 @@
 import {NavLink} from "react-router-dom";
 import styles from './MainNavigation.module.css';
 import {useState, useEffect} from "react";
+import {useSelector} from "react-redux";
 
 export const MainNavigation = () => {
     const [desktopNavMenuDisplay, setDesktopMovNavMenuDisplay] = useState('');
+
+    const user = useSelector(store => store.auth.currentUser);
+
+    const userIsLoggedIn = user !== null;
 
     let className = `${styles['navbar--menu-desktop']}`;
     let phoneNavClass = `${styles['navbar--menu-phone_button']} ${styles['navbar--menu-phone_button_closed']}`
@@ -32,20 +37,22 @@ export const MainNavigation = () => {
                     <li>
                         <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>HOME</NavLink>
                     </li>
+                        { !userIsLoggedIn &&
                     <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='login'className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>LOGIN</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='login' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >LOGIN</NavLink>
+                    </li> }
+                    <li>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='products' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PRODUCTS</NavLink>
                     </li>
+                    {userIsLoggedIn &&  <>
                     <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='products'className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>PRODUCTS</NavLink>
-                    </li>
-                    <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>PROFILE</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PROFILE</NavLink>
                     </li>
                         <li>
                             <div className={styles['navbar--actions']}>
                                 <button className={styles['navbar--button']}>CHART</button>
                             </div>
-                        </li>
+                        </li></>}
                         </div>
                     <li className={styles['navbar--menu-phone']}>
                         <button  onClick={togglePhoneMenu} className={phoneNavClass} tuype='button'>

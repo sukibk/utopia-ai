@@ -1,0 +1,109 @@
+.products-page-item--wrapper{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+}
+
+.products-page-item--main{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: inherit;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.products-page-item--main h1{
+    text-transform: uppercase;
+}
+
+.products-page-item--main h3{
+    text-transform: uppercase;
+    margin-top: -1rem;
+}
+
+.products-page-item--main_actions{
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 1.6rem;
+}
+
+.products-page-item--main_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.products-page-item--main_description img{
+    border-radius: 2rem;
+}
+
+.products-page-item--main_description img{
+    height: 200px;
+    width: 400px;
+}
+
+.products-page-item--main_actions button{
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    background-color: rgba(133, 42, 155, 0.72);
+}
+
+.products-page-item--main_actions button:hover{
+    background-color: #8c5ea4;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.products-page-item--main_actions button:disabled{
+    background-color: #555555;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width: 950px){
+    .products-page-item--wrapper{
+        width: 100%;
+        display: block;
+    }
+
+    .products-page-item--main{
+        background-color: rgba(241, 241, 241, 0.32);
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        border-radius: 0;
+        border-top-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1rem;
+        margin-bottom: -1rem;
+    }
+
+    .products-page-item--main_description{
+        display: none;
+    }
+
+    .products-page-item--main h1{
+        padding-top: 1.5rem;
+    }
+
+    .products-page-item--main_actions{
+        padding-top: 1.5rem;
+        display: inherit;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-evenly;
+    }
+
+    .products-page-item--main_header h1{
+        margin-top: -1rem;
+    }
+}
