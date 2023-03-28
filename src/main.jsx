@@ -5,9 +5,11 @@ import './index.scss'
 import {store} from "./store/index.js";
 import {Provider} from "react-redux";
 import {IconContext} from "react-icons";
+import {Toaster} from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
+      <Toaster />
       <IconContext.Provider value={{className: 'custom-icons'}}>
       <Provider store={store}>
     <App />

@@ -29,7 +29,6 @@ export const HomePageContainer = () =>{
     }
 
     return <section className={styles['main--section']}>
-        <Toaster />
         <Card40>
             <TitleBox />
         </Card40>

@@ -11,13 +11,15 @@ export const ProductsPageContainer = () => {
     const item = useRouteLoaderData('propId');
     const url = useSelector(store => store.url.url);
     const navigation = useNavigation();
-    console.log(navigation.state)
+    let className = '';
+
+    if(navigation.state === 'loading') className = styles.blur;
+    else className = '';
 
     return <div className={styles['products-container--wrapper']}>
         <Card80 className={styles['products-container--main']}>
             <div className={styles['products-container--main_background']} style={{background:`url(${url}) center center`}}/>
-            {navigation.state !== 'loading' ? <Outlet context={item}
-                    className={styles.item}/> : <p>Loading...</p>}
+            <Outlet style={{color: 'red'}} classname={className} context={item}/>
             <ProductsPageItems className={styles.items}/>
         </Card80>
     </div>

@@ -31,6 +31,10 @@
     height: 100%;
 }
 
+.blur{
+    opacity: 0.4;
+}
+
 @media only screen and (max-width: 950px){
     .products-container--main{
         display: flex;

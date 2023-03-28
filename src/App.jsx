@@ -11,7 +11,9 @@ import {ProductsPage,
 loader as productsLoader} from "./pages/Products";
 import {ProductPage,
 loader as productLoader} from "./pages/Product";
+import {action as loginAction, loader as loginLoader} from './components/LoginPage/LoginPageForm.jsx'
 import {loader as itemLoader} from './components/ProductsPage/ProductsPageContainer'
+import {Profile} from "./pages/Profile.jsx";
 
 const router = createBrowserRouter([
   {path: '/',
@@ -25,7 +27,9 @@ const router = createBrowserRouter([
      },
      {
          path: 'login',
-         element: <LoginPage />
+         element: <LoginPage />,
+         action: loginAction,
+         loader: loginLoader
      },
      {
          path: 'products',
@@ -43,9 +47,13 @@ const router = createBrowserRouter([
                  loader: productLoader
              }
          ]
-     }
+     },
    ]
-  }
+  },
+    {
+        path: 'profile',
+        element: <Profile />
+    }
 ])
 
 function App() {

@@ -45,7 +45,18 @@
     margin-bottom: 2rem;
 }
 
-.login-form--actions button{
+.login-form--actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.login-form--actions_button-register{
+    all: unset;
+    font-size: 1.1rem;
+}
+
+.login-form--actions_button{
     text-decoration: none;
     padding: 0.4rem 0.9rem;
     border-radius: 2rem;
@@ -54,7 +65,7 @@
     background-color: rgba(133, 42, 155, 0.72);
 }
 
-.login-form--actions button:hover{
+.login-form--actions_button:hover{
     background-color: #8c5ea4;
     cursor: pointer;
     transition: all 0.4s;
