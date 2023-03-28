@@ -1,0 +1,139 @@
+.wrapper{
+    background-color: #383737;
+}
+
+.website-logo{
+}
+
+.nav-section{
+}
+
+.navbar{
+
+}
+
+.navbar-menu{
+    list-style: none;
+    height: 100vh;
+}
+
+.navbar--menu-navigation{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.navbar--menu-navigation li{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    transition: all 0.3s;
+}
+
+.navbar--menu-item{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #dcd8d8;
+}
+
+
+.navbar--menu-item-active{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #dcd8d8;
+    color: peru;
+}
+
+
+.navbar--menu-item-active1:after{
+    color: peru;
+    content: ">";
+    display: block;
+    position: absolute;
+    top:146px;
+    width: 28%;
+    height: 10px;
+}
+
+.navbar--menu-item-active2:after{
+    color: peru;
+    content: ">";
+    display: block;
+    position: absolute;
+    top:246px;
+    width: 28%;
+    height: 10px;
+}
+
+.navbar--menu-item-active3:after{
+    color: peru;
+    content: ">";
+    display: block;
+    position: absolute;
+    top:345px;
+    width: 28%;
+    height: 10px;
+}
+
+.navbar--menu-item-active4:after{
+    color: peru;
+    content: ">";
+    display: block;
+    position: absolute;
+    top:444px;
+    width: 28%;
+    height: 10px;
+}
+
+.navbar--menu-item-active5:after{
+    color: peru;
+    content: ">";
+    display: block;
+    position: absolute;
+    top:543px;
+    width: 28%;
+    height: 10px;
+}
+
+.navbar--menu-navigation li:hover{
+    background-color: #555555;
+    transition: all 0.3s;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+
+.navbar--menu-actions button{
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    background-color: rgba(133, 42, 155, 0.72);
+}
+
+.navbar--menu-actions button:hover{
+    background-color: #8c5ea4;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+
+
+@media (max-width: 950px){
+    .navbar--menu-navigation{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .navbar-menu{
+        list-style: none;
+        height: 10vh;
+    }
+}
+

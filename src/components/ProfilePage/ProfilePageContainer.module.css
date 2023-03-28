@@ -1,0 +1,32 @@
+.profile-page-container--wrapper{
+}
+
+.profile-page-container--main{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.navigation{
+    width: 15%;
+}
+
+.content{
+    width: 85%;
+}
+
+@media (max-width: 950px){
+    .profile-page-container--main{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navigation{
+        width: revert;
+    }
+
+    .content{
+        width: revert;
+        height: 100%;
+    }
+}

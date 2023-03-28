@@ -14,6 +14,12 @@ loader as productLoader} from "./pages/Product";
 import {action as loginAction, loader as loginLoader} from './components/LoginPage/LoginPageForm.jsx'
 import {loader as itemLoader} from './components/ProductsPage/ProductsPageContainer'
 import {Profile} from "./pages/Profile.jsx";
+import {SampleOutlet} from "./components/ProfilePage/SampleOutlet";
+import {TokensPage} from "./pages/Tokens";
+import {LockerPage} from "./pages/Locker";
+import {SettingsPage} from "./pages/Settings";
+import {HelpPage} from "./pages/Help";
+import {action as logoutAction} from "./components/HomePage/HomePageContainer.jsx";
 
 const router = createBrowserRouter([
   {path: '/',
@@ -22,7 +28,6 @@ const router = createBrowserRouter([
      {
        index: true,
        element: <HomePage />,
-       action: signUpAction,
        loader: rootLoader,
      },
      {
@@ -52,7 +57,32 @@ const router = createBrowserRouter([
   },
     {
         path: 'profile',
-        element: <Profile />
+        element: <Profile />,
+        id: 'profile',
+        action: logoutAction,
+        children: [
+            {
+                index: true,
+                element: <SampleOutlet />
+            },
+            {
+                path: 'tokens',
+                element: <TokensPage/>
+            },
+            {
+                path: 'locker',
+                element: <LockerPage/>
+            },
+            {
+                path: 'settings',
+                element: <SettingsPage/>
+            },
+            {
+                path: 'help',
+                element: <HelpPage/>
+            },
+
+        ]
     }
 ])
 

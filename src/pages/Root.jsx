@@ -1,4 +1,4 @@
-import {MainNavigation} from "../components/MainNavigation";
+import {MainNavigation} from "../components/Navigation/Main/MainNavigation.jsx";
 import {Outlet, redirect} from "react-router";
 import {auth} from "../firebase.js";
 

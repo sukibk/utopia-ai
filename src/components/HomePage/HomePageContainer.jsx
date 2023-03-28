@@ -8,6 +8,7 @@ import {auth} from "../../firebase.js";
 import {signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut} from 'firebase/auth';
 import toast, {Toaster} from "react-hot-toast";
 import {removeUser} from "../../store/authSlice.js";
+import {redirect} from "react-router";
 
 export const HomePageContainer = () =>{
     const user = useSelector(store => store.auth.currentUser)
@@ -37,4 +38,15 @@ export const HomePageContainer = () =>{
                 onLogOut={loggingOutUser} email={user.email}/>}
         </Card40>
     </section>
+}
+
+
+export async function action({request, params}){
+    console.log('aa')
+    toast.promise(signOut(auth),{
+        loading: 'Logging Out...',
+        success: 'Logged Out!',
+        error: 'Error Occurred',
+    })
+    return redirect('/');
 }
