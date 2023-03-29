@@ -3,6 +3,7 @@
 .profile-page-container--wrapper{
     background-color: var(--background-main);
     padding-top: 4rem;
+    transition: background-color .4s;
 }
 
 
@@ -13,7 +14,7 @@
 }
 
 .navigation{
-    width: 15%;
+    width: 15.5%;
     margin-top: 2rem;
     position: fixed;
 }
