@@ -1,3 +1,5 @@
+@value colors: '../../../../ColorMods.module.css';
+
 .wrapper{
     width: 100%;
     display: flex;
@@ -7,12 +9,14 @@
 
 .nav--section {
     padding: 1rem;
-    background-color: rgba(181, 164, 238, 0.4);
+    background-color: var(--backgorund-main-wrapper);
     border-radius: 0rem 0rem 2rem 2rem;
-    width: 80%;
+    width: 90%;
+    height: 5rem;
 }
 
 .navbar{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,9 +24,12 @@
 }
 
 .navbar--menu{
+    width: 50%;
     list-style: none;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     font-size: 1.5rem;
 }
 
@@ -30,18 +37,21 @@
     font-size: 1.5rem;
     text-decoration: none;
     color: white;
+    transition: color 0.5s, font-size 0.2s;
 }
 
 .active{
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-top: 2rem;
     text-decoration: none;
-    color: peru;
-    transition: all 0.3s;
+    color: var(--nav-active);
+    transition: all 0.5s;
 }
 
+
 .navbar--menu_item:hover{
-    color: grey;
-    transition: all 0.2s;
+    color: var(--nav-hover);
+    transition: all 0.3s;
 }
 
 .navbar--actions{
@@ -49,15 +59,15 @@
 }
 
 .navbar--button{
-    color: white;
-    background-color: rgba(133, 42, 155, 0.72);
+    color: var(--buton-text);
+    background-color: var(--button-background);
     border-radius: 2rem;
     border: none;
     padding: 0.5rem 1rem;
 }
 
 .navbar--button:hover{
-    background-color: #8c5ea4;
+    background-color: var(--button-hover);
     cursor: pointer;
     transition: all 0.4s;
 }
@@ -169,7 +179,7 @@
     .active{
         font-size: 1rem;
         text-decoration: none;
-        color: peru;
+        color: var(--nav-active);
         transition: all 0.3s;
     }
 

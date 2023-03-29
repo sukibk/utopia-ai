@@ -1,5 +1,13 @@
+@value colors: '../../../../ColorMods.module.css';
+
 .wrapper{
-    background-color: #383737;
+    background-color: var(--background-profile);
+    color: var(--text-primary);
+    transition: all .4s;
+    height: 70vh;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    margin-left: 2rem;
 }
 
 .website-logo{
@@ -14,7 +22,7 @@
 
 .navbar-menu{
     list-style: none;
-    height: 100vh;
+    height: 70vh;
 }
 
 .navbar--menu-navigation{
@@ -22,7 +30,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
     justify-content: center;
 }
 
@@ -33,90 +41,43 @@
 }
 
 .navbar--menu-item{
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: #dcd8d8;
+    all: unset;
+    font-size: 1.2rem;
 }
 
 
 .navbar--menu-item-active{
     text-decoration: none;
     font-size: 1.3rem;
-    color: #dcd8d8;
-    color: peru;
+    color: var(--nav-active);
 }
 
-
-.navbar--menu-item-active1:after{
-    color: peru;
-    content: ">";
-    display: block;
-    position: absolute;
-    top:146px;
-    width: 28%;
-    height: 10px;
-}
-
-.navbar--menu-item-active2:after{
-    color: peru;
-    content: ">";
-    display: block;
-    position: absolute;
-    top:246px;
-    width: 28%;
-    height: 10px;
-}
-
-.navbar--menu-item-active3:after{
-    color: peru;
-    content: ">";
-    display: block;
-    position: absolute;
-    top:345px;
-    width: 28%;
-    height: 10px;
-}
-
-.navbar--menu-item-active4:after{
-    color: peru;
-    content: ">";
-    display: block;
-    position: absolute;
-    top:444px;
-    width: 28%;
-    height: 10px;
-}
-
-.navbar--menu-item-active5:after{
-    color: peru;
-    content: ">";
-    display: block;
-    position: absolute;
-    top:543px;
-    width: 28%;
-    height: 10px;
-}
 
 .navbar--menu-navigation li:hover{
-    background-color: #555555;
+    background-color: var(--nav-hover);
     transition: all 0.3s;
     padding-top: 1rem;
     padding-bottom: 1rem;
     cursor: pointer;
 }
 
+.navbar--menu-navigation-active{
+    background-color: var(--nav-hover);;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 
 .navbar--menu-actions button{
     text-decoration: none;
     padding: 0.4rem 0.9rem;
     border-radius: 2rem;
     border: none;
-    color: white;
-    background-color: rgba(133, 42, 155, 0.72);
+    color: var(--buton-text);
+    background-color: var(--button-background);
 }
 
 .navbar--menu-actions button:hover{
-    background-color: #8c5ea4;
+    background-color: var(--button-hover);
     cursor: pointer;
     transition: all 0.4s;
 }

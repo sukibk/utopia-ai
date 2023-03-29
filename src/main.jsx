@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Toaster />
       <IconContext.Provider value={{className: 'custom-icons'}}>
       <Provider store={store}>
-    <App />
+    <App/>
       </Provider>
       </IconContext.Provider>
   </>

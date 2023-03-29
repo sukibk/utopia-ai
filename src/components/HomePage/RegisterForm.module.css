@@ -1,7 +1,9 @@
+@value colors: '../../../ColorMods.module.css';
+
 .main-form--container{
     text-align: center;
     width: 100%;
-    background-color: rgba(181, 164, 238, 0.4);
+    background-color: var(--backgorund-main-wrapper);
     padding: 2rem;
     border-radius: inherit;
 }

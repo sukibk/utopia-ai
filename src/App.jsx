@@ -20,6 +20,7 @@ import {LockerPage} from "./pages/Locker";
 import {SettingsPage} from "./pages/Settings";
 import {HelpPage} from "./pages/Help";
 import {action as logoutAction} from "./components/HomePage/HomePageContainer.jsx";
+import {useSelector} from "react-redux";
 
 const router = createBrowserRouter([
   {path: '/',
@@ -53,43 +54,45 @@ const router = createBrowserRouter([
              }
          ]
      },
+       {
+           path: 'profile',
+           element: <Profile />,
+           id: 'profile',
+           action: logoutAction,
+           children: [
+               {
+                   index: true,
+                   element: <SampleOutlet />
+               },
+               {
+                   path: 'tokens',
+                   element: <TokensPage/>
+               },
+               {
+                   path: 'locker',
+                   element: <LockerPage/>
+               },
+               {
+                   path: 'settings',
+                   element: <SettingsPage/>
+               },
+               {
+                   path: 'help',
+                   element: <HelpPage/>
+               },
+
+           ]
+       }
    ]
   },
-    {
-        path: 'profile',
-        element: <Profile />,
-        id: 'profile',
-        action: logoutAction,
-        children: [
-            {
-                index: true,
-                element: <SampleOutlet />
-            },
-            {
-                path: 'tokens',
-                element: <TokensPage/>
-            },
-            {
-                path: 'locker',
-                element: <LockerPage/>
-            },
-            {
-                path: 'settings',
-                element: <SettingsPage/>
-            },
-            {
-                path: 'help',
-                element: <HelpPage/>
-            },
-
-        ]
-    }
 ])
 
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = useSelector(store => store.theme.theme);
 
-  return <RouterProvider router={router}/>
+  return <div className='main' data-theme={theme}>
+      <RouterProvider router={router}/>
+  </div>
 }
 
 export default App

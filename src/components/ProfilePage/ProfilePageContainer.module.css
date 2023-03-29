@@ -1,18 +1,27 @@
+@value colors: '../../../ColorMods.module.css';
+
 .profile-page-container--wrapper{
+    background-color: var(--background-main);
+    padding-top: 4rem;
 }
 
-.profile-page-container--main{
-    display: flex;
+
+.context{
+    display: inherit;
     flex-direction: row;
-    height: 100vh;
+    ackground-color: var(--background-main);
 }
 
 .navigation{
     width: 15%;
+    margin-top: 2rem;
+    position: fixed;
 }
 
 .content{
     width: 85%;
+    height: 200rem;
+    margin-left: 15%;
 }
 
 @media (max-width: 950px){

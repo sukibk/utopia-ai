@@ -1,27 +1,36 @@
 import {NavLink} from "react-router-dom";
 import {useSubmit} from "react-router-dom";
 import styles from './ProfileNavigation.module.css';
+import colorMode from '../../../../ColorMods.module.css';
 import logo from '../../../assets/logo.png';
 import {redirect, useNavigate} from "react-router";
 import toast from "react-hot-toast";
 import {signOut} from "firebase/auth";
 import {auth} from "../../../firebase.js";
+import {useState} from "react";
+import useLocalStorage from "use-local-storage";
+import {AiFillApple} from "react-icons/all.js";
+import {useDispatch, useSelector} from "react-redux";
+import {setTheme} from "../../../store/themeSlice.js";
 
 export const ProfileNavigation = () => {
     const navigate = useNavigate();
-    // const submit = useSubmit();
-    // //
-    // // const onLogOut = () =>{
-    // //     submit(null, {action: ''});
-    // }
+    const dispatch = useDispatch()
+
+    const switchTheme = () => {
+        const newTheme = localStorage.getItem('theme') === 'light' ? 'dark' : 'light';
+        dispatch(setTheme({theme: newTheme}));
+        localStorage.setItem('theme', `${newTheme}`)
+    }
 
     return <div className={styles.wrapper}>
-        <div className={styles['nav--section']}>
+        <div className={`${styles['nav--section']}`}>
             <nav className={styles.navbar}>
                 <ul className={styles['navbar-menu']}>
                     <div className={styles['navbar--menu-navigation']}>
                         <div className={styles['website-logo']}>
-                        <img src={logo} height='50px' width='100px'></img>
+                        {/*<img src={logo} height='50px' width='100px' />*/}
+                            <p><AiFillApple /></p>
                         </div>
                         <li onClick={() => navigate('')}>
                             <NavLink end to='' className={({isActive}) => !isActive ? styles['navbar--menu-item'] : `${styles['navbar--menu-item-active']} ${styles['navbar--menu-item-active1']}`}>USER INFO</NavLink>
@@ -39,7 +48,7 @@ export const ProfileNavigation = () => {
                             <NavLink to='help' className={({isActive}) => !isActive ? styles['navbar--menu-item'] : `${styles['navbar--menu-item-active']} ${styles['navbar--menu-item-active5']}`}>HELP</NavLink>
                         </li>
                         <div className={styles['navbar--menu-actions']}>
-                            <button >Sign Out</button>
+                            <button onClick={switchTheme}>Sign Out</button>
                         </div>
                     </div>
                 </ul>

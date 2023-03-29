@@ -1,7 +1,8 @@
 import {NavLink} from "react-router-dom";
 import styles from './MainNavigation.module.css';
 import {useState, useEffect} from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {setTheme} from "../../../store/themeSlice.js";
 
 export const MainNavigation = () => {
     const [desktopNavMenuDisplay, setDesktopMovNavMenuDisplay] = useState('');
@@ -9,6 +10,14 @@ export const MainNavigation = () => {
     const user = useSelector(store => store.auth.currentUser);
 
     const userIsLoggedIn = user !== null;
+
+    const dispatch = useDispatch()
+
+    const switchTheme = () => {
+        const newTheme = localStorage.getItem('theme') === 'light' ? 'dark' : 'light';
+        dispatch(setTheme({theme: newTheme}));
+        localStorage.setItem('theme', `${newTheme}`)
+    }
 
     let className = `${styles['navbar--menu-desktop']}`;
     let phoneNavClass = `${styles['navbar--menu-phone_button']} ${styles['navbar--menu-phone_button_closed']}`
@@ -35,22 +44,22 @@ export const MainNavigation = () => {
                 <ul className={styles['navbar--menu']}>
                     <div className={className}>
                     <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>HOME</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='/' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} end>HOME</NavLink>
                     </li>
                         { !userIsLoggedIn &&
                     <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='login' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >LOGIN</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='/login' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >LOGIN</NavLink>
                     </li> }
                     <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='products' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PRODUCTS</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='/products' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PRODUCTS</NavLink>
                     </li>
                     {userIsLoggedIn &&  <>
                     <li>
-                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PROFILE</NavLink>
+                        <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='/profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PROFILE</NavLink>
                     </li>
                         <li>
                             <div className={styles['navbar--actions']}>
-                                <button className={styles['navbar--button']}>CHART</button>
+                                <button onClick={switchTheme} className={styles['navbar--button']}>THEME</button>
                             </div>
                         </li></>}
                         </div>

@@ -1,0 +1,42 @@
+:root {
+    --background-profile: rgba(54, 138, 222, 0.78);
+    --background-main: #f1f1f5;
+    --background-main-squares: #ee4040;
+    --backgorund-main-wrapper: rgba(54, 138, 222, 0.78);
+    --text-primary: #333333;
+    --current-item: peru;
+    --button-background: rgba(133, 42, 155, 0.93);
+    --buton-text: #fffdfa;
+    --button-hover: #8c5ea4;
+    --nav-active: rgba(133, 42, 155, 0.93);
+    --background-profile-item: #c2bfbf;
+}
+
+
+[data-theme='dark'] {
+    --background-profile: #7f7f85;
+    --background-main: #3A3B3C;
+    --background-main-squares: cornflowerblue;
+    --backgorund-main-wrapper: #7f7f85;
+    --text-primary: #fffdfa;
+    --button-background: rgb(181, 164, 238);
+    --buton-text: #333333;
+    --button-hover: #8c5ea4;
+    --nav-active: rgb(181, 164, 238);
+    --nav-hover: #555555;
+    --background-profile-item: #555555;
+}
+
+.light {
+    background-color: #f1f1f1;
+    color: #333333;
+}
+
+.light:hover{
+
+}
+
+.dark {
+    background-color: #333333;
+    color: #f1f1f1;
+}
