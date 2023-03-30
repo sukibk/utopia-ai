@@ -1,0 +1,119 @@
+{
+	"tokens": {
+		"colorData": [
+			{
+				"name": "background-primary",
+				"baseColor": "#2C3333",
+				"variants": {
+					"50": "#738585",
+					"100": "#657575",
+					"200": "#576464",
+					"300": "#485454",
+					"400": "#3a4343",
+					"500": "#2c3333",
+					"600": "#1e2323",
+					"700": "#101212",
+					"800": "#010202",
+					"900": "#000000"
+				}
+			},
+			{
+				"name": "background-secondary",
+				"baseColor": "#395B64",
+				"variants": {
+					"50": "#80abb6",
+					"100": "#6c9eab",
+					"200": "#5a909e",
+					"300": "#4f7e8b",
+					"400": "#446d77",
+					"500": "#395b64",
+					"600": "#2e4950",
+					"700": "#23383d",
+					"800": "#18262a",
+					"900": "#0d1416"
+				}
+			},
+			{
+				"name": "background-utility-primary",
+				"baseColor": "#7eb2b3",
+				"variants": {
+					"50": "#ffffff",
+					"100": "#f2f7f7",
+					"200": "#dfecec",
+					"300": "#cce0e1",
+					"400": "#b8d5d5",
+					"500": "#7eb2b3",
+					"600": "#92bdbf",
+					"700": "#7eb2b3",
+					"800": "#6ba6a8",
+					"900": "#5b989a"
+				}
+			},
+			{
+				"name": "background-utility-secondary",
+				"baseColor": "#E7F6F2",
+				"variants": {
+					"50": "#ffffff",
+					"100": "#ffffff",
+					"200": "#ffffff",
+					"300": "#ffffff",
+					"400": "#fdfefe",
+					"500": "#e7f6f2",
+					"600": "#d1eee6",
+					"700": "#bae5da",
+					"800": "#a4ddce",
+					"900": "#8ed5c2"
+				}
+			},
+			{
+				"name": "text-primary",
+				"baseColor": "#EEF1FF",
+				"variants": {
+					"50": "#ffffff",
+					"100": "#ffffff",
+					"200": "#ffffff",
+					"300": "#ffffff",
+					"400": "#ffffff",
+					"500": "#eef1ff",
+					"600": "#cfd8ff",
+					"700": "#b1bfff",
+					"800": "#92a5ff",
+					"900": "#748cff"
+				}
+			},
+			{
+				"name": "nav-active",
+				"baseColor": "#AAC4FF",
+				"variants": {
+					"500": "#AAC4FF"
+				}
+			},
+			{
+				"name": "text-hover",
+				"baseColor": "#748cff",
+				"variants": {
+					"500": "#748cff"
+				}
+			},
+			{
+				"name": "text-hover-secondary",
+				"baseColor": "#8b8c8e",
+				"variants": {
+					"500": "#8b8c8e"
+				}
+			}
+		],
+		"typography": {
+			"fontSizes": []
+		},
+		"shadows": []
+	},
+	"files": [
+		"css"
+	],
+	"__internal__": {
+		"migrations": {
+			"version": "0.0.5"
+		}
+	}
+}
