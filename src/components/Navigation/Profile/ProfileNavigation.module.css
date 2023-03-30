@@ -1,14 +1,15 @@
 @value colors: '../../../../ColorMods.module.css';
 
 .wrapper{
-    background-color: var(--background-profile);
-    color: var(--text-primary);
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-primary);
     transition: all .4s;
     height: 70vh;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
     margin-left: 2rem;
-    border-right: 8px solid rgb(181, 164, 238);
+    border-right: 8px solid var(--color-background-utility-primary);
+    transition: background-color 0.4s;
 }
 
 .website-logo{
@@ -50,12 +51,12 @@
 .navbar--menu-item-active{
     text-decoration: none;
     font-size: 1.3rem;
-    color: var(--nav-active);
+    color: var(--color-nav-active);
 }
 
 
 .navbar--menu-navigation li:hover{
-    background-color: var(--nav-hover);
+    background-color: var(--color-text-hover-secondary);
     transition: all 0.3s;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -63,7 +64,7 @@
 }
 
 .navbar--menu-navigation-active{
-    background-color: var(--nav-hover);;
+    background-color: var(--color-text-hover-secondary);;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -73,12 +74,14 @@
     padding: 0.4rem 0.9rem;
     border-radius: 2rem;
     border: none;
-    color: var(--buton-text);
-    background-color: var(--button-background);
+    color: inherit;
+    background-color: var(--color-background-utility-primary);
+    transition: background-color, color 0.4s;
 }
 
 .navbar--menu-actions button:hover{
-    background-color: var(--button-hover);
+    color: var(--color-text-hover);
+    background-color: var(--color-background-utility-secondary);
     cursor: pointer;
     transition: all 0.4s;
 }

@@ -3,7 +3,7 @@
 .main-form--container{
     text-align: center;
     width: 100%;
-    background-color: var(--backgorund-main-wrapper);
+    background-color: var(--color-background-secondary);
     padding: 2rem;
     border-radius: inherit;
 }
@@ -35,6 +35,10 @@
     border-radius: 2rem;
 }
 
+.main-form--input:hover{
+    cursor: text;
+}
+
 .main-form--input_invalid{
     background-color: rgba(204, 90, 90, 0.7);
 }
@@ -45,7 +49,7 @@
 }
 
 .main-form--input::placeholder{
-    color: rgba(255, 236, 171, 0.51);
+    color: var(--color-text-primary);
 }
 
 .main-form--input_date-time{
@@ -79,18 +83,20 @@
     padding: 0.4rem 0.9rem;
     border-radius: 2rem;
     border: none;
-    color: white;
-    background-color: rgba(133, 42, 155, 0.72);
+    color: inherit;
+    background-color: var(--color-background-utility-primary);
 }
 
 .main-form--input_actions__button:hover{
-    background-color: #8c5ea4;
+    background-color: var(--color-background-utility-secondary);
+    color: var(--color-text-hover);
     cursor: pointer;
     transition: all 0.4s;
 }
 
 .main-form--input_actions__button:disabled{
     background-color: #555555;
+    color: var(--color-text-primary);
     cursor: not-allowed;
 }
 

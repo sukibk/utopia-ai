@@ -12,7 +12,7 @@
 }
 
 .login-content--text{
-    background-color: rgba(181, 164, 238, 0.4);
+    background-color: var(--color-background-secondary);
     margin-top: -0.47rem;
     padding: 0.8rem;
 }

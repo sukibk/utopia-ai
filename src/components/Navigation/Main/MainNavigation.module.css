@@ -1,5 +1,3 @@
-@value colors: '../../../../ColorMods.module.css';
-
 .wrapper{
     width: 100%;
     display: flex;
@@ -9,7 +7,7 @@
 
 .nav--section {
     padding: 1rem;
-    background-color: var(--backgorund-main-wrapper);
+    background-color: var(--color-background-secondary);
     border-radius: 0rem 0rem 2rem 2rem;
     width: 90%;
     height: 5rem;
@@ -36,7 +34,7 @@
 .navbar--menu_item{
     font-size: 1.5rem;
     text-decoration: none;
-    color: white;
+    color: var(--color-text-primary);
     transition: color 0.5s, font-size 0.2s;
 }
 
@@ -44,13 +42,13 @@
     font-size: 2rem;
     margin-top: 2rem;
     text-decoration: none;
-    color: var(--nav-active);
+    color: var(--color-nav-active);
     transition: all 0.5s;
 }
 
 
 .navbar--menu_item:hover{
-    color: var(--nav-hover);
+    color: var(--color-text-hover);
     transition: all 0.3s;
 }
 
@@ -59,15 +57,17 @@
 }
 
 .navbar--button{
-    color: var(--buton-text);
-    background-color: var(--button-background);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-utility-primary);
     border-radius: 2rem;
     border: none;
     padding: 0.5rem 1rem;
+    transition: background-color, color 0.4s;
 }
 
 .navbar--button:hover{
-    background-color: var(--button-hover);
+    background-color: var(--color-background-utility-secondary);
+    color: var(--color-text-hover);
     cursor: pointer;
     transition: all 0.4s;
 }
@@ -104,6 +104,7 @@
 
 /* when closed */
 
+@media (min-width: 750px){
 .navbar--menu-phone_button_closed:hover > .navbar--menu-phone_item-1 {
     transform: translate(8px, 11px) rotate(-60deg);
 }
@@ -112,7 +113,7 @@
 
 .navbar--menu-phone_button_closed:hover > .navbar--menu-phone_item-3{
     transform: translate(-8px, -11px) rotate(60deg);
-}
+}}
 
 /**/
 
@@ -129,6 +130,7 @@
     background: transparent;
     border: none;
 }
+
 
 .fade-in {
     animation: fadeIn 0.5s;
@@ -150,6 +152,10 @@
         display: flex;
         flex-direction: column;
         font-size: 2rem;
+    }
+
+    .nav--section{
+        height: unset;
     }
 
     .hide-on-mobile{
@@ -179,7 +185,7 @@
     .active{
         font-size: 1rem;
         text-decoration: none;
-        color: var(--nav-active);
+        color: var(--color-nav-active);
         transition: all 0.3s;
     }
 

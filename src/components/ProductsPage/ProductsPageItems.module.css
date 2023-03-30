@@ -27,8 +27,10 @@
 }
 
 .products-page-items--main_item:hover{
-    background-color: rgba(78, 84, 200, 0.63);
+    color: var(--color-text-hover);
+    background-color: var(--color-background-utility-secondary);
     cursor: pointer;
+    transition: all 0.4s;
 }
 
 .active{

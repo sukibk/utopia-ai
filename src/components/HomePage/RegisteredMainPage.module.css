@@ -1,22 +1,22 @@
-@value colors: '../../../ColorMods.module.css';
-
 .button{
-    color: var(--buton-text);
-    background-color: var(--button-background);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-utility-primary);
     border-radius: 2rem;
     border: none;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    transition: background-color, color 0.4s;
 }
 
 .button:hover{
-    background-color: var(--button-hover);
+    background-color: var(--color-background-utility-secondary);
+    color: var(--color-text-hover);
     cursor: pointer;
     transition: all 0.4s;
 }
 
 .logged-in--wrapper{
-    background-color: var(--backgorund-main-wrapper);
+    background-color: var(--color-background-secondary);
     border-radius: 2rem;
     display: flex;
     flex-direction: column;

@@ -2,7 +2,7 @@
 
 .title-box--container{
     height: 100%;
-    background-color: var(--backgorund-main-wrapper);
+    background-color: var(--color-background-secondary);
     padding: 2rem;
     border-radius: inherit;
 }

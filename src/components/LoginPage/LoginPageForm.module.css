@@ -1,5 +1,5 @@
 .login-form--wrapper{
-    background-color: rgba(181, 164, 238, 0.4);
+    background-color: var(--color-background-secondary);
     border-radius: inherit;
     width: 100%;
     display: flex;
@@ -33,12 +33,12 @@
     border-radius: 2rem;
 }
 
-.login-form--form input:active{
-
+.login-form--form input:hover{
+    cursor: text;
 }
 
 .login-form--form input::placeholder{
-    color: rgba(255, 236, 171, 0.51);
+    color: var(--color-text-primary);
 }
 
 .login-form--actions{
@@ -61,12 +61,13 @@
     padding: 0.4rem 0.9rem;
     border-radius: 2rem;
     border: none;
-    color: white;
-    background-color: rgba(133, 42, 155, 0.72);
+    color: inherit;
+    background-color: var(--color-background-utility-primary);
 }
 
 .login-form--actions_button:hover{
-    background-color: #8c5ea4;
+    color: var(--color-text-hover);
+    background-color: var(--color-background-utility-secondary);
     cursor: pointer;
     transition: all 0.4s;
 }

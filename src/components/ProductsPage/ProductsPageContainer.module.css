@@ -6,12 +6,13 @@
 
 
 .products-container--main{
+    color: var(--color-text-primary);
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(181, 164, 238, 0.4);
+    background-color: var(--color-background-secondary);
     margin-top: 4rem;
     z-index: 1;
 }
@@ -41,7 +42,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        background-color: rgba(181, 164, 238, 0.4);
+        background-color: var(--color-background-secondary);
         margin-top: 4rem;
     }
 

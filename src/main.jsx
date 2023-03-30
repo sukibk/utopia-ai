@@ -6,6 +6,8 @@ import {store} from "./store/index.js";
 import {Provider} from "react-redux";
 import {IconContext} from "react-icons";
 import {Toaster} from "react-hot-toast";
+import '../.mirrorful/theme.css'
+import '../.mirrorful/darktheme.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>

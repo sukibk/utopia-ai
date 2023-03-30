@@ -1,7 +1,6 @@
 @value colors: '../../../ColorMods.module.css';
 
 .profile-page-container--wrapper{
-    background-color: var(--background-main);
     padding-top: 4rem;
     transition: background-color .4s;
 }
@@ -10,12 +9,13 @@
 .context{
     display: inherit;
     flex-direction: row;
-    ackground-color: var(--background-main);
+    background-color: var(--color-background-primary);
+    transition: background-color 0.4s;
 }
 
 .navigation{
     width: 15.5%;
-    margin-top: 2rem;
+    margin-top: 2.8rem;
     position: fixed;
 }
 
