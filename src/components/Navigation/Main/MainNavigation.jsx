@@ -7,10 +7,20 @@ import DayNightToggle from 'react-day-and-night-toggle'
 
 export const MainNavigation = () => {
     const [desktopNavMenuDisplay, setDesktopMovNavMenuDisplay] = useState('');
-    const [isDarkMode, setIsDarkMode] = useState(true)
+    const [isDarkMode, setIsDarkMode] = useState()
     const user = useSelector(store => store.auth.currentUser);
 
     const userIsLoggedIn = user !== null;
+
+    let darkModeChecker = localStorage.getItem('theme');
+
+
+    useEffect(() => {
+        if(darkModeChecker === 'light'){
+            setIsDarkMode(true);
+        }
+        else setIsDarkMode(false);
+    }, [])
 
     const dispatch = useDispatch()
 

@@ -13,6 +13,7 @@ import {HomePageBackground} from "./HomePageBackground";
 import {useEffect} from "react";
 import {showHomeSquares, hideHomeSquares} from "../../store/backgroundSlice.js";
 import {hide} from "mirrorful/editor/.next/server/chunks/472.js";
+import {setTheme} from "../../store/themeSlice.js";
 
 export const HomePageContainer = () =>{
     const user = useSelector(store => store.auth.currentUser)
@@ -36,15 +37,17 @@ export const HomePageContainer = () =>{
 
     // Bug no. 1 -> Squares appear under background
 
-    // useEffect(() => {
-    //     dispatch(showHomeSquares());
-    //
-    //     return () => dispatch(hideHomeSquares())
-    // }, [])
+    useEffect(() => {
+        dispatch(showHomeSquares());
+        // const newTheme = localStorage.getItem('theme') === 'light' ? 'dark' : 'light';
+        // document.body.setAttribute('data-theme', `${newTheme}`)
+
+        return () => dispatch(hideHomeSquares())
+    }, [])
 
     return <section className={styles['wrapper']}>
-        {/* // Bug no. 1 -> Squares appear under background
-        <HomePageBackground/>*/}
+        { // Bug no. 1 -> Squares appear under background
+        <HomePageBackground/>}
         <div className={styles['main--section']}>
         <Card40>
             <TitleBox />

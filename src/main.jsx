@@ -12,7 +12,9 @@ import theme from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-      <Toaster />
+      <Toaster toastOptions={{className: 'hot-toast',
+      style: {backgroundColor:'var(--color-background-primary)',
+      color: 'var(--color-text-primary)'}}}/>
       <IconContext.Provider value={{className: 'custom-icons'}}>
       <Provider store={store}>
     <App/>

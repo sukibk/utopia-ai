@@ -140,6 +140,10 @@
         align-items: center;
     }
 
+    .navbar--menu-navigation li:hover{
+        background-color: unset;
+    }
+
 }
 
 

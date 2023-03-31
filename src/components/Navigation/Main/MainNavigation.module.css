@@ -3,7 +3,7 @@
     display: flex;
     gap: 2rem;
     justify-content: center;
-    transition: height 0.4s;
+    transition: height 0.4s, background-color .4s;
 }
 
 .nav--section {
@@ -12,6 +12,7 @@
     border-radius: 0rem 0rem 2rem 2rem;
     width: 90%;
     height: 5rem;
+    transition: background-color .4s;
 }
 
 .navbar{
@@ -186,7 +187,8 @@
     .navbar--menu_item{
         font-size: 1rem;
         text-decoration: none;
-        color: white;
+        color: var(--color-text-primary);
+        transition: all 0.4s;
     }
 
     .active{
@@ -252,7 +254,8 @@
     .navbar--menu_item{
         font-size: 1rem;
         text-decoration: none;
-        color: white;
+        color: var(--color-text-primary);
+        transition: all 0.4s;
     }
 
     .active{

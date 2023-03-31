@@ -4,6 +4,7 @@
     width: 40%;
     display: flex;
     justify-content: center;
+    transition: background-color .4s;
 }
 
 .products-page-items--main{
@@ -27,14 +28,15 @@
 }
 
 .products-page-items--main_item:hover{
-    color: var(--color-text-hover);
-    background-color: var(--color-background-utility-secondary);
+    color: var(--color-text-hover-secondary);
+    background-color: var(--color-form-placeholder-text);
     cursor: pointer;
     transition: all 0.4s;
 }
 
 .active{
-    background-color: rgba(241, 241, 241, 0.32);
+    background-color: var(--color-background-utility-primary);
+    transition: 0.4s all;
 }
 
 
@@ -77,8 +79,10 @@
     }
 
     .products-page-items--main_item:hover{
-        background-color: rgba(241, 241, 241, 0.32);
+        color: var(--color-text-hover-secondary);
+        background-color: var(--color-form-placeholder-text);
         cursor: pointer;
+        transition: all .4s;
     }
 
 }

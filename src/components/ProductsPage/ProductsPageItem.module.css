@@ -52,11 +52,11 @@
     border-radius: 2rem;
     border: none;
     color: inherit;
-    background-color: var(--color-background-utility-primary);
+    background-color: var(--color-background-secondary);
 }
 
 .products-page-item--main_actions button:hover{
-    background-color: var(--color-background-utility-secondary);
+    background-color: var(--color-background-primary);
     color: var(--color-text-hover);
     cursor: pointer;
     transition: all 0.4s;
@@ -74,7 +74,7 @@
     }
 
     .products-page-item--main{
-        background-color: rgba(241, 241, 241, 0.32);
+        background-color: var(--color-background-utility-primary);
         margin-left: 1rem;
         margin-right: 1rem;
         margin-top: 1rem;
@@ -86,6 +86,7 @@
         justify-content: space-evenly;
         gap: 1rem;
         margin-bottom: -1rem;
+        transition: all .4s;
     }
 
     .products-page-item--main_description img{
@@ -126,7 +127,7 @@
     }
 
     .products-page-item--main{
-        background-color: rgba(241, 241, 241, 0.32);
+        background-color: var(--color-background-utility-primary);
         margin-left: 1rem;
         margin-right: 1rem;
         margin-top: 1rem;
@@ -138,6 +139,7 @@
         justify-content: space-evenly;
         gap: 1rem;
         margin-bottom: -1rem;
+        transition: all .4s
     }
 
     .products-page-item--main_description img{

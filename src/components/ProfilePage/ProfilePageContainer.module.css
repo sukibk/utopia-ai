@@ -11,7 +11,7 @@
     display: inherit;
     flex-direction: row;
     background-color: var(--color-background-primary);
-    transition: background-color 0.4s;
+    transition: background-color .5s;
 }
 
 .navigation{

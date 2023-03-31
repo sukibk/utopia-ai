@@ -87,10 +87,9 @@ const router = createBrowserRouter([
 function App() {
   const theme = useSelector(store => store.theme.theme);
     // Bug no. 1 -> Squares appear under background
+    const className = useSelector(store => store.background.className)
 
-    // const className = useSelector(store => store.background.className)
-
-  return <div className='main' data-theme={theme}>
+  return <div className={className} data-theme={theme}>
       <RouterProvider router={router}/>
   </div>
 }
