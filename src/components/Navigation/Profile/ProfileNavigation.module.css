@@ -1,5 +1,17 @@
 @value colors: '../../../../ColorMods.module.css';
 
+.wrapper-phone{
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-primary);
+    transition: all .4s;
+    height: 70vh;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    margin-left: 2rem;
+    border-right: 8px solid var(--color-background-utility-primary);
+    transition: background-color 0.4s, height 0.4s;
+}
+
 .wrapper{
     background-color: var(--color-background-secondary);
     color: var(--color-text-primary);
@@ -9,7 +21,7 @@
     border-bottom-left-radius: 2rem;
     margin-left: 2rem;
     border-right: 8px solid var(--color-background-utility-primary);
-    transition: background-color 0.4s;
+    transition: background-color 0.4s, height 0.4s;
 }
 
 .hide{
@@ -91,9 +103,15 @@
 }
 
 
+@media (min-width: 950px){
+    .wrapper-phone{
+        display: none;
+    }
+}
+
 
 @media (min-width: 601px) and (max-width: 949px){
-    .wrapper{
+    .wrapper-phone{
         background-color: var(--color-background-secondary);
         color: var(--color-text-primary);
         width: 30%;
@@ -126,7 +144,7 @@
 
 
 @media (max-width: 600px) {
-    .wrapper{
+    .wrapper-phone{
         position: fixed;
         height: 10%;
         width: 85.2%;
@@ -143,13 +161,13 @@
         display: none;
     }
 
-    .nex{
+    .navbar--menu-navigation-opened{
         display: flex;
     }
 
-    .nex2{
-        margin-top: -1rem;
+    .navbar--menu-opened{
         height: 82%;
+        transition: height 0.4s;
     }
 
     .navbar{
@@ -160,10 +178,30 @@
     }
 
     .hide{
-        margin-top: 0.5rem;
+        border: none;
+        border-radius: 2rem;
+        margin-top: 1rem;
         display: block;
-        width: 100px;
-        height: 50px;
+        background-color: var(--color-background-utility-primary);
+        color: var(--color-text-primary)
+    }
+
+    .hide:hover{
+        background-color: var(--color-background-utility-secondary);
+        color: var(--color-text-hover);
+        cursor: pointer;
+    }
+
+    .hide-content{
+        padding: 0.5rem 2rem;
+    }
+
+    .navbar--menu-navigation li:hover{
+        background-color: unset;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
     }
 }
 

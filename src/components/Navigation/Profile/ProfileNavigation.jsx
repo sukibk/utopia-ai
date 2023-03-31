@@ -31,7 +31,7 @@ export const ProfileNavigation = () => {
                     <div className={`${styles['navbar--menu-navigation']} ${styles.nex}`}>
                         <div className={styles['website-logo']}>
                         {/*<img src={logo} height='50px' width='100px' />*/}
-                            <p><AiFillApple /></p>
+                        {/*    <p><AiFillApple /></p>*/}
                         </div>
                         <li onClick={() => navigate('')}>
                             <NavLink end to='' className={({isActive}) => !isActive ? styles['navbar--menu-item'] : `${styles['navbar--menu-item-active']} ${styles['navbar--menu-item-active1']}`}>USER INFO</NavLink>

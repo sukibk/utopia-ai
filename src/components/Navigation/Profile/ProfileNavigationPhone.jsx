@@ -13,9 +13,11 @@ import {AiFillApple} from "react-icons/all.js";
 import {useDispatch, useSelector} from "react-redux";
 import {setTheme} from "../../../store/themeSlice.js";
 
-export const ProfileNavigation = () => {
+export const ProfileNavigationPhone = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [nameNav, setNameNav] = useState('Menu')
 
     const switchTheme = () => {
         const newTheme = localStorage.getItem('theme') === 'light' ? 'dark' : 'light';
@@ -23,17 +25,36 @@ export const ProfileNavigation = () => {
         localStorage.setItem('theme', `${newTheme}`)
     }
 
-    return <div className={styles.wrapper}>
+    let wrapperClass = styles['wrapper-phone'];
+    let menuNacClass = styles['navbar--menu-navigation'];
+
+    if(isExpanded){
+        wrapperClass = `${styles['wrapper-phone']} ${styles['navbar--menu-opened']}`;
+        menuNacClass = `${styles['navbar--menu-navigation']} ${styles['navbar--menu-navigation-opened']}`;
+    }
+
+    const expandNav = () => {
+        setIsExpanded(prevValue => !prevValue);
+    }
+
+    const changeNavLabel = (newName) => {
+        setNameNav(newName)
+    }
+
+    return <div className={wrapperClass}>
         <div className={`${styles['nav--section']}`}>
             <nav className={styles.navbar}>
+                <button className={styles.hide} onClick={expandNav}><p className={styles['hide-content']}>
+                    {nameNav}</p>
+                </button>
                 <ul className={styles['navbar-menu']}>
-                    <div className={styles['navbar--menu-navigation']}>
+                    <div className={menuNacClass}>
                         <div className={styles['website-logo']}>
                             {/*<img src={logo} height='50px' width='100px' />*/}
-                            <p><AiFillApple /></p>
+                            {/*<p><AiFillApple /></p>*/}
                         </div>
                         <li onClick={() => navigate('')}>
-                            <NavLink end to='' className={({isActive}) => !isActive ? styles['navbar--menu-item'] : `${styles['navbar--menu-item-active']} ${styles['navbar--menu-item-active1']}`}>USER INFO</NavLink>
+                            <NavLink end to='' onClick={() => {changeNavLabel('USER INFO'); expandNav()}} className={({isActive}) => !isActive ? styles['navbar--menu-item'] : `${styles['navbar--menu-item-active']} ${styles['navbar--menu-item-active1']}`}>USER INFO</NavLink>
                         </li>
                         <li onClick={() => navigate('tokens')}>
                             <NavLink to='tokens' className={({isActive}) => !isActive ? styles['navbar--menu-item'] : `${styles['navbar--menu-item-active']} ${styles['navbar--menu-item-active2']}`}>TOKENS</NavLink>

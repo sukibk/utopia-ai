@@ -3,6 +3,7 @@
     display: flex;
     gap: 2rem;
     justify-content: center;
+    transition: height 0.4s;
 }
 
 .nav--section {
