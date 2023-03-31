@@ -4,7 +4,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
 .login-form--wrapper h1{
@@ -26,11 +25,12 @@
     width: 100%;
 }
 
-.login-form--form input{
+.login-form--form-input{
     all: unset;
     width: 60%;
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: var(--color-form-background);
     border-radius: 2rem;
+    transition: all 0.4s;
 }
 
 .login-form--form input:hover{
@@ -38,7 +38,24 @@
 }
 
 .login-form--form input::placeholder{
-    color: var(--color-text-primary);
+    color: var(--color-form-placeholder-text);
+    transition: all 0.4s;
+}
+
+.login-form--input_invalid{
+    background-color: var(--color-form-background-error);
+    transition: all 0.4s;
+}
+
+.login-form--form input:focus{
+    background-color: var(--color-form-background-active);
+    color: var(--color-form-background);
+    transition: all 0.4s;
+}
+
+.login-form--form input:focus::placeholder{
+    color: var(--color-form-background);
+    transition: all 0.4s;
 }
 
 .login-form--actions{
@@ -63,6 +80,7 @@
     border: none;
     color: inherit;
     background-color: var(--color-background-utility-primary);
+    transition: background-color 0.4s;
 }
 
 .login-form--actions_button:hover{
@@ -73,12 +91,13 @@
 }
 
 .login-form--actions button:disabled{
-    background-color: #555555;
+    background-color: var(--color-button-disabled);
+    color: var(--color-button-disabled-text);
     cursor: not-allowed;
+    transition: color .4s, background-color .4s;
 }
 
 @media only screen and (max-width: 950px){
     .login-form--wrapper{
-       margin-top: -4rem;
     }
 }

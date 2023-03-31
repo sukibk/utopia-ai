@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {RootPage} from "./pages/Root.jsx";
 import {HomePage, action as signUpAction,
@@ -21,6 +17,7 @@ import {SettingsPage} from "./pages/Settings";
 import {HelpPage} from "./pages/Help";
 import {action as logoutAction} from "./components/HomePage/HomePageContainer.jsx";
 import {useSelector} from "react-redux";
+import {useState} from "react";
 
 const router = createBrowserRouter([
   {path: '/',
@@ -89,10 +86,15 @@ const router = createBrowserRouter([
 
 function App() {
   const theme = useSelector(store => store.theme.theme);
+    // Bug no. 1 -> Squares appear under background
+
+    // const className = useSelector(store => store.background.className)
 
   return <div className='main' data-theme={theme}>
       <RouterProvider router={router}/>
   </div>
 }
+
+export const theme = App.theme;
 
 export default App

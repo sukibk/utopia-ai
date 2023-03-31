@@ -60,4 +60,18 @@
   --color-text-hover-500: #748cff;
   --color-text-hover-secondary: #8b8c8e;
   --color-text-hover-secondary-500: #8b8c8e;
+  --color-form-background: #4f7e8b;
+  --color-form-background-500: #4f7e8b;
+  --color-form-background-active: #2e4950;
+  --color-form-background-active-500: #2e4950;
+  --color-form-background-error: #EF4F4F;
+  --color-form-background-error-500: #EF4F4F;
+  --color-button-disabled: #7F8487;
+  --color-button-disabled-500: #7F8487;
+  --color-button-disabled-text: #271818;
+  --color-button-disabled-text-500: #271818;
+  --color-form-placeholder-text: #EEF1FF;
+  --color-form-placeholder-text-500: #EEF1FF;
+  --color-form-text-active: #f8f1f1;
+  --color-form-text-active-500: #f8f1f1;
 }

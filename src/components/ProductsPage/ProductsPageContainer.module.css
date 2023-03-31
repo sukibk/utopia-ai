@@ -36,7 +36,7 @@
     opacity: 0.4;
 }
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 1430px){
     .products-container--main{
         display: flex;
         flex-direction: column;

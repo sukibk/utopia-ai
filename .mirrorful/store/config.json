@@ -1,5 +1,8 @@
 {
 	"tokens": {
+		"typography": {
+			"fontSizes": []
+		},
 		"colorData": [
 			{
 				"name": "background-primary",
@@ -101,11 +104,57 @@
 				"variants": {
 					"500": "#8b8c8e"
 				}
+			},
+			{
+				"name": "form-background",
+				"baseColor": "#4f7e8b",
+				"variants": {
+					"500": "#4f7e8b"
+				}
+			},
+			{
+				"name": "form-background-active",
+				"baseColor": "#2e4950",
+				"variants": {
+					"500": "#2e4950"
+				}
+			},
+			{
+				"name": "form-background-error",
+				"baseColor": "#EF4F4F",
+				"variants": {
+					"500": "#EF4F4F"
+				}
+			},
+			{
+				"name": "button-disabled",
+				"baseColor": "#7F8487",
+				"variants": {
+					"500": "#7F8487"
+				}
+			},
+			{
+				"name": "button-disabled-text",
+				"baseColor": "#271818",
+				"variants": {
+					"500": "#271818"
+				}
+			},
+			{
+				"name": "form-placeholder-text",
+				"baseColor": "#EEF1FF",
+				"variants": {
+					"500": "#EEF1FF"
+				}
+			},
+			{
+				"name": "form-text-active",
+				"baseColor": "#f8f1f1",
+				"variants": {
+					"500": "#f8f1f1"
+				}
 			}
 		],
-		"typography": {
-			"fontSizes": []
-		},
 		"shadows": []
 	},
 	"files": [

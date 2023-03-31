@@ -44,7 +44,7 @@ export const RegisterForm = (props) =>{
                 {/*<input name='dob' placeholder='DOB' onFocus={() => setType('date')} onBlur={() => setType('text')} type={type} id="date" className={styles['main-form--input_date-time']}/>*/}
             </div>
             <div className={styles['main-form--input_actions']}>
-                <button disabled={!enableRegister} className={styles['main-form--input_actions__button']}>REGISTER</button>
+                <button disabled={!enableRegister} title='Enter E-Mail and Password' className={styles['main-form--input_actions__button']}>REGISTER</button>
                 <Link to='login' className={styles['main-form--input_actions__button']}>GO TO LOGIN</Link>
             </div>
         </Form>

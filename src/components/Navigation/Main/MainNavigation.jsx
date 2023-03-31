@@ -3,10 +3,11 @@ import styles from './MainNavigation.module.css';
 import {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setTheme} from "../../../store/themeSlice.js";
+import DayNightToggle from 'react-day-and-night-toggle'
 
 export const MainNavigation = () => {
     const [desktopNavMenuDisplay, setDesktopMovNavMenuDisplay] = useState('');
-
+    const [isDarkMode, setIsDarkMode] = useState(true)
     const user = useSelector(store => store.auth.currentUser);
 
     const userIsLoggedIn = user !== null;
@@ -16,6 +17,8 @@ export const MainNavigation = () => {
     const switchTheme = () => {
         const newTheme = localStorage.getItem('theme') === 'light' ? 'dark' : 'light';
         dispatch(setTheme({theme: newTheme}));
+        document.body.setAttribute('data-theme', `${newTheme}`)
+        console.log(document.getElementById('root'));
         localStorage.setItem('theme', `${newTheme}`)
     }
 
@@ -57,11 +60,15 @@ export const MainNavigation = () => {
                     <li>
                         <NavLink onClick={() => setDesktopMovNavMenuDisplay('')} to='/profile' className={({isActive}) => !isActive ? styles['navbar--menu_item'] : styles.active} >PROFILE</NavLink>
                     </li>
+                    </>}
                         <li>
                             <div className={styles['navbar--actions']}>
-                                <button onClick={switchTheme} className={styles['navbar--button']}>THEME</button>
+                                <DayNightToggle className={styles['navbar--button']}
+                                    onChange={() => {setIsDarkMode(!isDarkMode); switchTheme()}}
+                                    checked={isDarkMode}
+                                />
                             </div>
-                        </li></>}
+                        </li>
                         </div>
                     <li className={styles['navbar--menu-phone']}>
                         <button  onClick={togglePhoneMenu} className={phoneNavClass} tuype='button'>
@@ -69,6 +76,12 @@ export const MainNavigation = () => {
                         <div className={`${styles['navbar--menu-phone_item']} ${styles['navbar--menu-phone_item-2']}`}> </div>
                         <div className={`${styles['navbar--menu-phone_item']} ${styles['navbar--menu-phone_item-3']}`}> </div>
                         </button>
+                            <div className={styles['navbar--actions']}>
+                                <DayNightToggle className={styles['navbar--button--phone']}
+                                                onChange={() => {setIsDarkMode(!isDarkMode); switchTheme()}}
+                                                checked={isDarkMode}
+                                />
+                            </div>
                         </li>
                 </ul>
             </nav>

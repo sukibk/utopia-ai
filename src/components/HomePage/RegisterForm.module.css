@@ -31,8 +31,9 @@
 .main-form--input{
     all: unset;
     width: 60%;
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: var(--color-form-background);
     border-radius: 2rem;
+    transition: background-color 0.4s;
 }
 
 .main-form--input:hover{
@@ -40,16 +41,24 @@
 }
 
 .main-form--input_invalid{
-    background-color: rgba(204, 90, 90, 0.7);
+    background-color: var(--color-form-background-error);
+    transition: all 0.4s;
 }
 
-.main-form--input_text:focus{
-    background-color: rgba(211, 211, 211, 0.41);
-    transition: all 0.3s;
+.main-form--input:focus{
+    background-color: var(--color-form-background-active);
+    color: var(--color-form-text-active);
+    transition: all 0.4s;
+}
+
+.main-form--input:focus::placeholder{
+    color: var(--color-form-background);
+    transition: all 0.4s;
 }
 
 .main-form--input::placeholder{
-    color: var(--color-text-primary);
+    color: var(--color-form-placeholder-text);
+    transition: all 0.4s;
 }
 
 .main-form--input_date-time{
@@ -85,6 +94,7 @@
     border: none;
     color: inherit;
     background-color: var(--color-background-utility-primary);
+    transition: background-color 0.4s, color 0.4s;
 }
 
 .main-form--input_actions__button:hover{
@@ -95,8 +105,9 @@
 }
 
 .main-form--input_actions__button:disabled{
-    background-color: #555555;
-    color: var(--color-text-primary);
+    background-color: var(--color-button-disabled);
+    color: var(--color-button-disabled-text);
     cursor: not-allowed;
+    transition: background-color .4s, color .4s;
 }
 

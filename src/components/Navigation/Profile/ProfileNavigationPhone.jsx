@@ -23,14 +23,13 @@ export const ProfileNavigation = () => {
         localStorage.setItem('theme', `${newTheme}`)
     }
 
-    return <div className={`${styles.wrapper} ${styles.nex2}`}>
+    return <div className={styles.wrapper}>
         <div className={`${styles['nav--section']}`}>
             <nav className={styles.navbar}>
-                <button className={styles.hide}>EXPAND</button>
                 <ul className={styles['navbar-menu']}>
-                    <div className={`${styles['navbar--menu-navigation']} ${styles.nex}`}>
+                    <div className={styles['navbar--menu-navigation']}>
                         <div className={styles['website-logo']}>
-                        {/*<img src={logo} height='50px' width='100px' />*/}
+                            {/*<img src={logo} height='50px' width='100px' />*/}
                             <p><AiFillApple /></p>
                         </div>
                         <li onClick={() => navigate('')}>
