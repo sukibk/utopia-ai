@@ -1,0 +1,62 @@
+.mobile-navigation--modal--wrapper{
+    width: 50%;
+    height: 100%;
+    border-radius: 0 2rem 2rem 0;
+    background-color: var(--color-background-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+}
+
+.mobile-navigation--modal{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.close-button{
+    position: absolute;
+    top:2rem;
+    right: 2rem;
+}
+
+.close-button--line{
+    width: 35px;
+    height: 5px;
+    background-color: var(--color-text-primary);
+    margin: 6px 0;
+    border-radius:0.7rem;
+    transition: all .5s;
+}
+
+.line1{
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.line2{
+    transform: translate(0, 0px) rotate(45deg);
+}
+
+@keyframes slideIn {
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    75%{
+        opacity: 0.1;
+        transform: translateY(-99%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in{
+    animation: slideIn 5s ease-out forwards;
+}

@@ -21,6 +21,7 @@
     "react-redux": "^8.0.5",
     "react-router": "^6.9.0",
     "react-router-dom": "^6.9.0",
+    "react-transition-group": "^4.4.5",
     "reactstrap": "^9.1.8",
     "sass": "^1.59.3",
     "use-local-storage": "^2.3.6"
@@ -30,6 +31,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "mirrorful": "^5.0.6",
+    "prettier": "^2.8.7",
     "vite": "^4.2.0"
   }
 }

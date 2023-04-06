@@ -1,15 +1,12 @@
-@value colors: '../../../ColorMods.module.css';
-
-.title-box--container{
-    height: 100%;
-    background-color: var(--color-background-secondary);
-    padding: 2rem;
-    border-radius: inherit;
+.title-box--container {
+  height: 100%;
+  background-color: var(--color-background-secondary);
+  padding: 2rem;
+  border-radius: inherit;
 }
 
-.title-box--main{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.title-box--main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
-

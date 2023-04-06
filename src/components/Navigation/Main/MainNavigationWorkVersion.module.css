@@ -4,6 +4,7 @@
     gap: 2rem;
     justify-content: center;
     transition: height 0.4s, background-color .4s;
+
 }
 
 .nav--section {
@@ -13,6 +14,10 @@
     width: 90%;
     height: 5rem;
     transition: background-color .4s;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*gap: 2rem;*/
 }
 
 .navbar{
@@ -97,7 +102,6 @@
 .navbar--menu-phone_button_trans:hover > .navbar--menu-phone_item-1 {
     transform: translate(0, 11px) rotate(-45deg);
 }
-
 .navbar--menu-phone_button_trans:hover > .navbar--menu-phone_item-2 {opacity: 0;}
 
 .navbar--menu-phone_button_trans:hover > .navbar--menu-phone_item-3{

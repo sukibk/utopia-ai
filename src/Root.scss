@@ -1,15 +1,15 @@
-@import '../.mirrorful/theme.css';
-@import '../.mirrorful/darktheme.css';
+@import "../.mirrorful/theme.css";
+@import "../.mirrorful/darktheme.css";
 
-*{
+* {
   font-size: 16px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Dosis', sans-serif;
+body {
+  font-family: "Dosis", sans-serif;
   line-height: 1.7;
   font-weight: 900;
   text-align: center;
@@ -18,13 +18,27 @@ body{
   transition: background-color 0.5s;
 }
 
-#root{
+#root {
   min-height: 100%;
   display: flex;
+  z-index: 1;
 }
 
-.main{
+// Used on all pages except of 'Home' page
+.main {
   background-color: var(--color-background-primary);
+  min-height: 100vh;
+  width: 100%;
+  color: var(--color-text-primary);
+  transition: background-color 0.5s, color 1s;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Used on 'Home' page to fix the bug with moving-squares background
+.main-home {
   min-height: 100vh;
   width: 100%;
   color: var(--color-text-primary);
@@ -34,68 +48,58 @@ body{
   align-items: center;
 }
 
-.main-home{
-  min-height: 100vh;
-  width: 100%;
-  color: var(--color-text-primary);
-  transition: background-color .5s, color 1s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-button{
+button {
   font: inherit;
 }
 
-h1{
+h1 {
   font-size: 3rem;
 }
 
-h2{
+h2 {
   font-size: 2rem;
 }
 
+//Scrollbar
+// -------------------------------------------
 ::-webkit-scrollbar {
-  width: 10px;
+  //display: none; - Will be done once horizontal scroll on top is created
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
+  border-radius: 2rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+// -------------------------------------------
 
-.custom-icons{
+// Styling for icons (currently only on 'ProductPageItems')
+.custom-icons {
   width: 30px;
   height: 30px;
   margin-top: 0.7rem;
 }
 
-
+// Don't know what is this and if it is used
 .context {
   width: 100%;
   position: absolute;
-  top:50vh;
-
+  top: 50vh;
 }
 
-.context h1{
+.context h1 {
   text-align: center;
   color: #fff;
   font-size: 50px;
 }
-
-.hot-toast{
-  background-color: var(red);
-}
-

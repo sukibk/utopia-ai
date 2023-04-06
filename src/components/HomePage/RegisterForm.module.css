@@ -1,113 +1,109 @@
-@value colors: '../../../ColorMods.module.css';
-
-.main-form--container{
-    text-align: center;
-    width: 100%;
-    background-color: var(--color-background-secondary);
-    padding: 2rem;
-    border-radius: inherit;
+.main-form--container {
+  text-align: center;
+  width: 100%;
+  background-color: var(--color-background-secondary);
+  padding: 2rem;
+  border-radius: inherit;
 }
 
-.main-form--container h2{
-    margin-top: -1rem;
-    margin-bottom: 1rem;
+.main-form--container h2 {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
 }
 
-.main-form--main{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.main-form--main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.main-form--input_container{
-    display: inherit;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    gap: 1.3rem;
+.main-form--input_container {
+  display: inherit;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  gap: 1.3rem;
 }
 
-.main-form--input{
-    all: unset;
-    width: 60%;
-    background-color: var(--color-form-background);
-    border-radius: 2rem;
-    transition: background-color 0.4s;
+.main-form--input {
+  all: unset;
+  width: 60%;
+  background-color: var(--color-form-background);
+  border-radius: 2rem;
+  transition: background-color 0.4s;
 }
 
-.main-form--input:hover{
-    cursor: text;
+.main-form--input:hover {
+  cursor: text;
 }
 
-.main-form--input_invalid{
-    background-color: var(--color-form-background-error);
-    transition: all 0.4s;
+.main-form--input_invalid {
+  background-color: var(--color-form-background-error);
+  transition: all 0.4s;
 }
 
-.main-form--input:focus{
-    background-color: var(--color-form-background-active);
-    color: var(--color-form-text-active);
-    transition: all 0.4s;
+.main-form--input:focus {
+  background-color: var(--color-form-background-active);
+  color: var(--color-form-text-active);
+  transition: all 0.4s;
 }
 
-.main-form--input:focus::placeholder{
-    color: var(--color-form-background);
-    transition: all 0.4s;
+.main-form--input:focus::placeholder {
+  color: var(--color-form-background);
+  transition: all 0.4s;
 }
 
-.main-form--input::placeholder{
-    color: var(--color-form-placeholder-text);
-    transition: all 0.4s;
+.main-form--input::placeholder {
+  color: var(--color-form-placeholder-text);
+  transition: all 0.4s;
 }
 
-.main-form--input_date-time{
-    all: unset;
-    width: 60%;
-    background-color: rgba(255, 255, 255, 0.16);
-    border-radius: 2rem;
+.main-form--input_date-time {
+  all: unset;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 2rem;
 }
 
 ::-webkit-calendar-picker-indicator {
-    margin-right: 1rem;
-    margin-top: 0.3rem;
+  margin-right: 1rem;
+  margin-top: 0.3rem;
 }
 
-::-webkit-calendar-picker-indicator:hover{
-    cursor: pointer;
+::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
 }
 
-.main-form--input_actions{
-
+.main-form--input_actions {
 }
 
-.main-form--input_actions{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.main-form--input_actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.main-form--input_actions__button{
-    text-decoration: none;
-    padding: 0.4rem 0.9rem;
-    border-radius: 2rem;
-    border: none;
-    color: inherit;
-    background-color: var(--color-background-utility-primary);
-    transition: background-color 0.4s, color 0.4s;
+.main-form--input_actions__button {
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  border: none;
+  color: inherit;
+  background-color: var(--color-background-utility-primary);
+  transition: background-color 0.4s, color 0.4s;
 }
 
-.main-form--input_actions__button:hover{
-    background-color: var(--color-background-utility-secondary);
-    color: var(--color-text-hover);
-    cursor: pointer;
-    transition: all 0.4s;
+.main-form--input_actions__button:hover {
+  background-color: var(--color-background-utility-secondary);
+  color: var(--color-text-hover);
+  cursor: pointer;
+  transition: all 0.4s;
 }
 
-.main-form--input_actions__button:disabled{
-    background-color: var(--color-button-disabled);
-    color: var(--color-button-disabled-text);
-    cursor: not-allowed;
-    transition: background-color .4s, color .4s;
+.main-form--input_actions__button:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-button-disabled-text);
+  cursor: not-allowed;
+  transition: background-color 0.4s, color 0.4s;
 }
-

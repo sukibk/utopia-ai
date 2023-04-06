@@ -1,52 +1,56 @@
-.products-container--wrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.products {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.products-container--wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-.products-container--main{
-    color: var(--color-text-primary);
-    position: relative;
+.products-container--main {
+  color: var(--color-text-primary);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background-secondary);
+  z-index: 1;
+}
+
+.products-container--main_background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.05;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.blur {
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 1430px) {
+  .products-container--main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-background-secondary);
-    margin-top: 4rem;
-    z-index: 1;
-}
+  }
 
-.products-container--main_background{
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: .05;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    border-radius: 2rem;
-    width: 100%;
-    height: 100%;
-}
-
-.blur{
-    opacity: 0.4;
-}
-
-@media only screen and (max-width: 1430px){
-    .products-container--main{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--color-background-secondary);
-        margin-top: 4rem;
-    }
-
-    .products-container--main_background{
-        display: none;
-    }
+  .products-container--main_background {
+    display: none;
+  }
 }

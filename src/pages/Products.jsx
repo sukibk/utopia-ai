@@ -1,22 +1,7 @@
-import {ProductsPageContainer} from "../components/ProductsPage/ProductsPageContainer";
-import {redirect, useLoaderData, useNavigate} from "react-router";
-import {auth} from "../firebase.js";
-import {setUser} from "../store/authSlice.js";
-import {useDispatch} from "react-redux";
-import {useEffect} from "react";
+import { ProductsPageContainer } from "../components/ProductsPage/ProductsPageContainer";
 
 export const ProductsPage = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            dispatch(setUser({currentUser: user}))
-        })
+  return <ProductsPageContainer />;
+};
 
-        return unsubscribe
-    }, [])
-    return <ProductsPageContainer/>
-}
-
-export function loader({params}){
-
-}
+export function loader({ params }) {}

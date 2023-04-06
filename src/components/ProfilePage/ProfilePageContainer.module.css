@@ -1,7 +1,7 @@
 @value colors: '../../../ColorMods.module.css';
 
 .profile-page-container--wrapper{
-    padding-top: 4rem;
+    padding-top: 4.5rem;
     transition: background-color .4s;
     height: 100%;
     width: 100%;
@@ -48,4 +48,11 @@
         margin-left: revert;
         height: 100%;
     }
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+    .profile-page-container--wrapper{
+        padding-top: 10rem;
+    }
+
 }

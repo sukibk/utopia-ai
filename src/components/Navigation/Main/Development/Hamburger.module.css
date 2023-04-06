@@ -1,0 +1,31 @@
+.main-navigation--switch{
+    background: none;
+    border: none;
+}
+
+.main-navigation--switch--item{
+    width: 35px;
+    height: 5px;
+    background-color: var(--color-text-primary);
+    margin: 6px 0;
+    border-radius:0.7rem;
+    transition: all .5s;
+}
+
+/*For Laptops*/
+.main-navigation--switch:hover{
+    cursor: pointer;
+}
+
+.main-navigation--switch:hover > .line--1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.main-navigation--switch:hover >  .line--2 {opacity: 0;}
+
+.main-navigation--switch:hover >  .line--3{
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+
+}
