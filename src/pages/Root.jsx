@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import { auth } from "../firebase.js";
-import { Navigation } from "../components/Navigation/Main/Development/Navigation.jsx";
-import { MobileNav } from "../components/Navigation/Main/Development/MobileNav";
+import { Navigation } from "../components/Navigation/Main/Desktop/Navigation.jsx";
+import { MobileNav } from "../components/Navigation/Main/Mobile/MobileNav.jsx";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setUser } from "../store/authSlice.js";
