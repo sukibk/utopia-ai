@@ -3,8 +3,9 @@ import { NavItem } from "../utils/NavItem.jsx";
 import { CSSTransition } from "react-transition-group";
 import { useEffect, useState } from "react";
 import { HamburgerNav } from "../utils/HamburgerNav.jsx";
-import DayNightToggle from "react-day-and-night-toggle";
+import { ThemeSwitcher } from "../../../utils/ThemeSwitcher";
 
+// TO DO: Secured Routes
 export const navigationLinks = [
   {
     id: "home",
@@ -33,17 +34,19 @@ export const navigationLinks = [
 ];
 
 export const Navigation = () => {
-  const [showPhoneNavButton, setShowPhoneNavButton] = useState(false);
-  const [expandMenu, setExpandMenu] = useState(true);
+  // Used to determine when to use smaller screen display
+  const [showHamburger, setShowHamburger] = useState(false);
 
+  const [expandMenu, setExpandMenu] = useState(true); // Used to expand and retrieve nav when
+
+  // Controls navigation states
   const handleResize = () => {
     let width = window.innerWidth;
-    console.log(width, showPhoneNavButton);
-    if (width < 1024) {
-      setShowPhoneNavButton(true);
+    if (width <= 1024) {
+      setShowHamburger(true);
       setExpandMenu(false);
     } else {
-      setShowPhoneNavButton(false);
+      setShowHamburger(false);
       setExpandMenu(true);
     }
   };
@@ -51,7 +54,8 @@ export const Navigation = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     if (window.innerWidth < 1024) {
-      setShowPhoneNavButton(true);
+      // Initialize state based on screen size on load
+      setShowHamburger(true);
       setExpandMenu(false);
     }
 
@@ -62,15 +66,12 @@ export const Navigation = () => {
     <CSSTransition
       in={expandMenu}
       classNames={{
-        appear: styles["main-navigation--take-position"],
-        appearActive: styles["main-navigation--take-position"],
-        appearDone: styles["main-navigation--take-position"],
         enter: "",
         enterActive: styles["main-navigation--slide__down"],
         exit: "",
         exitActive: styles["main-navigation--slide__up"],
       }}
-      timeout={400}
+      timeout={{ enter: 400, exit: 400 }}
     >
       <header className={styles["main-navigation--wrapper"]}>
         <div className={styles["main-navigation-left"]}>
@@ -88,11 +89,10 @@ export const Navigation = () => {
               }}
               mountOnEnter
               unmountOnExit
-              timeout={50}
+              timeout={{ enter: 400, exit: 100 }}
             >
+              {/* Desktop (big) */}
               <ul className={styles["main-navigation--menu"]}>
-                {" "}
-                {/* phone/desktop */}
                 {navigationLinks.map(({ id, navigationLabel, navigateTo }) => (
                   <li
                     className={"main-navigation--item-wrapper"}
@@ -101,7 +101,7 @@ export const Navigation = () => {
                     <NavItem
                       navigateTo={navigateTo}
                       navigationLabel={navigationLabel}
-                      isExpanded={showPhoneNavButton}
+                      isExpanded={showHamburger}
                       onNavigate={() =>
                         setExpandMenu((prevState) => !prevState)
                       }
@@ -110,19 +110,20 @@ export const Navigation = () => {
                 ))}
               </ul>
             </CSSTransition>
-            {/*necemo ovako*/}
-            {showPhoneNavButton && (
-              <div className={styles["main-navigation--phone-actions"]}>
+            {/* Desktop (medium) */}
+            {showHamburger && (
+              <div className={styles["main-navigation--small-screen--actions"]}>
                 <HamburgerNav
-                  show={showPhoneNavButton}
+                  show={showHamburger}
                   navExpanded={expandMenu}
                   onShow={() => setExpandMenu((prevState) => !prevState)}
                 />
-                <DayNightToggle className={styles["navbar--button"]} />
+                <ThemeSwitcher />
               </div>
             )}
           </nav>
         </section>
+        {/* Desktop (big and medium)*/}
         <div className={styles["main-navigation__right"]}>
           <div className={styles["main-navigation__right--inner"]}>
             <div className={"main-navigation--item-wrapper"}>
@@ -130,13 +131,14 @@ export const Navigation = () => {
                 expand={true}
                 navigateTo={"login"}
                 navigationLabel={"Login"}
-                isExpanded={showPhoneNavButton}
+                isExpanded={showHamburger}
                 onNavigate={() => setExpandMenu((prevState) => prevState)}
               />
             </div>
-            {!showPhoneNavButton && (
+            {/* Desktop (medium) */}
+            {!showHamburger && (
               <div className={styles["main-navigation--item--theme-switcher"]}>
-                <DayNightToggle className={styles["navbar--button"]} />
+                <ThemeSwitcher />
               </div>
             )}
           </div>

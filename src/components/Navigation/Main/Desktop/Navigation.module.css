@@ -38,46 +38,11 @@
   margin-top: 0.3rem;
 }
 
-/*---------------*/
-/*Animations*/
-
-/*Nav and Nav Button*/
-@keyframes fadeInNav {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOutNav {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.main-navigation--fade__in {
-  animation: fadeInNav 0.05s ease-out forwards;
-}
-
-.main-navigation--fade__out {
-  animation: fadeOutNav 0.05s ease-out forwards;
-}
-
-.main-navigation--phone-actions {
+.main-navigation--small-screen--actions {
   display: inherit;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 60%;
 }
 
@@ -105,6 +70,40 @@
   align-items: center;
 }
 
+/*---------------*/
+/*Animations*/
+
+/*Nav and Nav Button*/
+@keyframes fadeInNav {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutNav {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.main-navigation--fade__in {
+  animation: fadeInNav 400ms ease-out forwards;
+}
+
+.main-navigation--fade__out {
+  animation: fadeOutNav 100ms ease-out forwards;
+}
+
 /*------*/
 
 /*Nav Wrapper*/
@@ -112,29 +111,14 @@
   0% {
     height: 5rem;
   }
-  25% {
-    height: 10rem;
-  }
-  50% {
-    height: 15rem;
-  }
-  75% {
-    height: 20rem;
+  100% {
+    height: 23.5rem;
   }
 }
 
 @keyframes slideUpNav {
   0% {
-    height: 20rem;
-  }
-  25% {
-    height: 15rem;
-  }
-  50% {
-    height: 10rem;
-  }
-  75% {
-    height: 7.5rem;
+    height: 23.5rem;
   }
   100% {
     height: 5rem;
@@ -142,11 +126,11 @@
 }
 
 .main-navigation--slide__down {
-  animation: slideDownNav 0.2s ease-out forwards;
+  animation: slideDownNav 400ms ease-out forwards;
 }
 
 .main-navigation--slide__up {
-  animation: slideUpNav 0.2s ease-out forwards;
+  animation: slideUpNav 400ms ease-out forwards;
 }
 
 /*-----*/

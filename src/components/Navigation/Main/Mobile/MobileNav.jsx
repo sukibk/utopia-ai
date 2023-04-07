@@ -1,36 +1,14 @@
-import { navigationLinks } from "../Desktop/Navigation.jsx";
 import styles from "./MobileNav.module.css";
 import { HamburgerNav } from "../utils/HamburgerNav.jsx";
-import DayNightToggle from "react-day-and-night-toggle";
-import { useEffect, useState } from "react";
-import { setTheme } from "../../../../store/themeSlice.js";
-import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { ModalNav } from "./ModalNav.jsx";
-import { createPortal } from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import { MobileBackDrop } from "./MobileBackDrop.jsx";
+import { ThemeSwitcher } from "../../../utils/ThemeSwitcher";
 
 export const MobileNav = () => {
+  // Used to control whether modal with backdrop will be shown or not
   const [navIsOpened, setNavIsOpened] = useState(false);
-
-  const [isDarkMode, setIsDarkMode] = useState();
-  let darkModeChecker = localStorage.getItem("theme");
-  const dispatch = useDispatch();
-
-  const switchTheme = () => {
-    const newTheme =
-      localStorage.getItem("theme") === "light" ? "dark" : "light";
-    dispatch(setTheme({ theme: newTheme }));
-    document.body.setAttribute("data-theme", `${newTheme}`);
-    console.log(document.getElementById("root"));
-    localStorage.setItem("theme", `${newTheme}`);
-  };
-
-  useEffect(() => {
-    if (darkModeChecker === "light") {
-      setIsDarkMode(true);
-    } else setIsDarkMode(false);
-  }, []);
 
   return (
     <header className={styles["mobile-navigation--wrapper"]}>
@@ -46,7 +24,7 @@ export const MobileNav = () => {
       >
         <section className={styles["mobile-navigation"]}>
           <HamburgerNav
-            show={true}
+            show={true} // Always displayed
             onShow={() => {
               setNavIsOpened((prevValue) => !prevValue);
             }}
@@ -55,7 +33,7 @@ export const MobileNav = () => {
             mountOnEnter
             unmountOnExit
             in={navIsOpened}
-            timeout={500}
+            timeout={{ enter: 500, exit: 500 }}
             classNames={{
               enter: "",
               enterActive: styles["slide-in"],
@@ -64,6 +42,7 @@ export const MobileNav = () => {
             }}
           >
             <ModalNav
+              in={navIsOpened}
               closeNav={() => {
                 setNavIsOpened((prevValue) => !prevValue);
               }}
@@ -73,7 +52,7 @@ export const MobileNav = () => {
             mountOnEnter
             unmountOnExit
             in={navIsOpened}
-            timeout={500}
+            timeout={{ enter: 500, exit: 500 }}
             classNames={{
               enter: "",
               enterActive: styles["slide-in__reverse"],
@@ -88,14 +67,7 @@ export const MobileNav = () => {
         </section>
       </CSSTransition>
       <section className={styles["theme-switcher"]}>
-        <DayNightToggle
-          className={styles["navbar--button--phone"]}
-          onChange={() => {
-            setIsDarkMode(!isDarkMode);
-            switchTheme();
-          }}
-          checked={isDarkMode}
-        />
+        <ThemeSwitcher />
       </section>
     </header>
   );

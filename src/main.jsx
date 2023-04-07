@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Toaster
       toastOptions={{
         style: {
-          backgroundColor: "var(--color-background-primary)",
+          backgroundColor: "var(--color-background-secondary)",
           color: "var(--color-text-primary)",
         },
       }}
