@@ -3,7 +3,8 @@ import { RootPage } from "./pages/Root.jsx";
 import { HomePage } from "./pages/Home";
 import { LoginPage } from "./pages/Login";
 import { ProductsPage } from "./pages/Products";
-import { ProductPage, loader as productLoader } from "./pages/Product";
+import { loader as productLoader} from  './components/ProductsPage/ProductsPageContainer.jsx'
+import { ProductPage } from "./pages/Product";
 import { action as loginAction } from "./components/LoginPage/LoginPageForm.jsx";
 import { action as registerAction } from "./components/HomePage/RegisterForm.jsx";
 import { Profile } from "./pages/Profile.jsx";
