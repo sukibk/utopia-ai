@@ -19,9 +19,7 @@ export const ProductsPageContainer = () => {
             className={styles["products-container--main_background"]}
             style={{ background: `url(${url}) center center` }}
           />
-          <Outlet
-            style={{ color: "red" }}
-            context={item} />
+          <Outlet style={{ color: "red" }} context={item} />
           <ProductsPageItems className={styles.items} />
         </Card80>
       </div>
@@ -45,7 +43,8 @@ export async function loader({ params }) {
     });
 
   const response = delayFetch(
-    `https://utopia-ai-dev-default-rtdb.firebaseio.com/products/${productId}.json`,{
+    `https://utopia-ai-dev-default-rtdb.firebaseio.com/products/${productId}.json`,
+    {
       delay: 0,
       method: "GET",
       headers: {
