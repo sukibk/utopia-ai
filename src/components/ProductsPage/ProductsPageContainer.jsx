@@ -53,16 +53,6 @@ export async function loader({ params }) {
     }
   );
 
-  const response2 = delayFetch(
-    `https://utopia-ai-dev-default-rtdb.firebaseio.com/products/${productId}.json`,
-    {
-      delay: 0,
-      method: "GET",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }
-  );
   const data = await response;
   return data; // This data will be used in Product.jsx and needed in 'ProductsPageItem'
 }
