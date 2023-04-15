@@ -53,6 +53,6 @@ export async function loader({ params }) {
     }
   );
 
-  const data = await response; /d
+  const data = await response;
   return data; // This data will be used in Product.jsx and needed in 'ProductsPageItem'
 }
