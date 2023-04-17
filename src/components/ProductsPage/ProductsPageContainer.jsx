@@ -48,7 +48,7 @@ export async function loader({ params }) {
       delay: 0,
       method: "GET",
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        "Content-type": "application/json;  charset=UTF-8",
       },
     }
   );
