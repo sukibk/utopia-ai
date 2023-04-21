@@ -89,7 +89,7 @@ export const Navigation = () => {
               }}
               mountOnEnter
               unmountOnExit
-              timeout={{ enter: 500, exit: 100 }}
+              timeout={{ enter: 400, exit: 100 }}
             >
               {/* Desktop (big) */}
               <ul className={styles["main-navigation--menu"]}>
