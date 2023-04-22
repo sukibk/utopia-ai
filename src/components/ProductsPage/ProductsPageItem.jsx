@@ -30,7 +30,7 @@ export const ProductsPageItem = (props /* props.item service based on url */) =>
       <div className={styles["products-page-item--main_actions"]}>
         {/* TO DO: Add functions */}
         <button>LEARN MORE</button>
-        <button>BUY TOKENS</button>
+        <button>PURCHASE TOKENS</button>
       </div>
     </div>
   </div>;
