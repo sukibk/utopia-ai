@@ -31,6 +31,7 @@ export const ProductsPageItem = (props /* props.item service based on url */) =>
         {/* TO DO: Add functions */}
         <button>LEARN MORE</button>
         <button>PURCHASE TOKENS</button>
+        <button>NEXT ITEM</button>
       </div>
     </div>
   </div>;
