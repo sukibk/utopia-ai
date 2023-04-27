@@ -21,7 +21,7 @@ export const ProductsPageItem = (props /* props.item service based on url */) =>
     <div className={styles["products-page-item--main"]}>
       <div className={styles["products-page-item--main_header"]}>
         <h1>{props.item.title}</h1>
-        <h3>{props.item.titleDescription}</h3>
+        <h3>{props.item.title}</h3>
       </div>
       <div className={styles["products-page-item--main_description"]}>
         <img src={props.item.url} alt={`${props.item.id} picture can't be loaded`} />
