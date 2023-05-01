@@ -28,7 +28,7 @@ export const ProductsPageItem = (props /* props.item service based on url */) =>
         <p>{props.item.text}</p>
       </div>
       <div className={styles["products-page-item--main_actions"]}>
-
+        {/* TO DO: Add functions */}
         <button>LEARN MORE</button>
         <button>PURCHASE TOKENS</button>
 
